@@ -25,8 +25,7 @@ const greeting = {
   subTitle: emoji(
     "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
   ),
-  resumeLink:
-    "", // Set to empty to hide the button
+  resumeLink: "", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -143,9 +142,7 @@ const educationInfo = {
       subHeader: "Bachelor of Science in Computer Science",
       duration: "September 2020 - April 2024",
       desc: "Ranked top 1% in the program. Awarded Gold Medal for Academic Excellence",
-      descBullets: [
-        "DS321 - Machine Learning"
-        ]
+      descBullets: ["DS321 - Machine Learning"]
     }
   ]
 };
@@ -181,7 +178,7 @@ const workExperiences = {
       company: "UMass Amherst",
       companylogo: require("./assets/images/UMassLogo.png"),
       date: "June 2025 – Present",
-      desc: "Created biomedical QA datasets through API calls by passing citation-referenced sentences to GPT-4o, and developed an RAG-based medical QA system using the pre-trained LLaMA-3-8B model. Fine-tuned and evaluated the model on the custom dataset to enhance citation accuracy and answer reliability, bootstrapping an external retrieval corpus for factual grounding. ",
+      desc: "Created biomedical QA datasets through API calls by passing citation-referenced sentences to GPT-4o, and developed an RAG-based medical QA system using the pre-trained LLaMA-3-8B model. Fine-tuned and evaluated the model on the custom dataset to enhance citation accuracy and answer reliability, bootstrapping an external retrieval corpus for factual grounding. "
       // descBullets: [
       //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
       //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
@@ -361,9 +358,7 @@ const podcastSection = {
   subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
 
   // Please Provide with Your Podcast embeded Link
-  podcast: [
-    ""
-  ],
+  podcast: [""],
   display: true // Set false to hide this section, defaults to true
 };
 
