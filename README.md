@@ -1,5 +1,5 @@
 # Portfolio
 ## Srikar Prabhas Kandagatla
 
-Om Namo Venkateshaya!
+Om Namo Venkateshaya! \n
 Made with Love.
