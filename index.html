@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Srikar Prabhas Kandagatla — MS Computer Science at UMass Amherst. ML Engineer & Researcher specializing in NLP, Computer Vision, and Multimodal AI."/>
+  <title>Srikar Prabhas Kandagatla — Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <!-- Portfolio Stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ══ COSMIC BACKGROUND ══
+       Three star layers + shooting stars + nebula + light-theme texture.
+       All dark-theme elements fade to opacity:0 via CSS on light theme.
+  -->
+  <div id="cosmos">
+    <div class="s1"></div>
+    <div class="s2"></div>
+    <div class="s3"></div>
+    <div class="sh"></div>
+    <div class="sh"></div>
+    <div class="sh"></div>
+    <div class="nebula"></div>
+    <div class="ltex"></div>
+  </div>
+
+
+  <!-- ══ NAVIGATION ══ -->
+  <nav>
+    <div class="nav-logo">SK<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="tog" onclick="toggleTheme()" aria-label="Toggle dark/light theme">
+      <div class="togthumb" id="tt">☀️</div>
+    </button>
+  </nav>
+
+
+  <!-- ══ SECTION 00 — HERO ══ -->
+  <section id="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+
+        <div>
+          <div class="eyebrow rv">MS Computer Science · UMass Amherst</div>
+          <h1 class="hname rv d1">Srikar<br/>Prabhas<br/><span class="hl">Kandagatla</span></h1>
+          <div class="htitle rv d2">ML Engineer &amp; Researcher &nbsp;·&nbsp; NLP &nbsp;·&nbsp; Computer Vision &nbsp;·&nbsp; Multimodal AI</div>
+          <p class="hdesc rv d2">
+            Building intelligent systems at the intersection of <strong>language, vision, and audio</strong>.
+            Currently a Graduate Research Extern at <strong>Dolby Laboratories</strong> and MS student at
+            UMass Amherst (GPA: 3.95/4.0). Passionate about multimodal recommendation, RAG pipelines,
+            and production-grade ML deployment.
+          </p>
+          <div class="hctas rv d3">
+            <a href="mailto:skandagatla@umass.edu" class="btnp">Get in Touch</a>
+            <a href="https://github.com/srikarprabhas" target="_blank" class="btns">View GitHub</a>
+          </div>
+          <div class="hsocials rv d4">
+            <a href="https://linkedin.com/in/srikarprabhas" target="_blank" class="hlink">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/srikarprabhas" target="_blank" class="hlink">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://scholar.google.com" target="_blank" class="hlink">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8 8 0 0112 10a8 8 0 017.162 3.44L24 9.5 12 0z"/></svg>
+              Scholar
+            </a>
+          </div>
+        </div>
+
+        <div class="hstats rv d2">
+          <div class="sc"><div class="snum">3.95<span>/4.0</span></div><div class="slbl">MS GPA · UMass</div></div>
+          <div class="sc"><div class="snum">2<span>+</span></div><div class="slbl">Publications</div></div>
+          <div class="sc"><div class="snum">4<span>+</span></div><div class="slbl">ML Projects</div></div>
+          <div class="sc"><div class="snum">🥇</div><div class="slbl">Gold Medal · IFHE</div></div>
+          <div class="sc wide">
+            <div>
+              <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--highlight);margin-bottom:6px">Currently At</div>
+              <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:600;color:var(--text);line-height:1.4">Dolby Laboratories<br/>Graduate Research Extern</div>
+            </div>
+            <div class="grow">
+              <div class="gi"><div class="gn">9.21</div><div class="gl">B.Tech GPA</div></div>
+              <div class="gd"></div>
+              <div class="gi"><div class="gn">#1</div><div class="gl">Batch Rank</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ SECTION 01 — ABOUT ══ -->
+  <section id="about">
+    <div class="wrap">
+      <div class="shead rv"><span class="snum2">01</span><h2 class="stitle">About</h2><div class="sline"></div></div>
+      <div class="about-grid">
+        <div class="atext rv">
+          <p>I'm a <strong>Machine Learning Engineer and Researcher</strong> pursuing my MS in Computer Science at UMass Amherst (GPA: 3.95/4.0). My work sits at the intersection of multimodal AI, natural language processing, and scalable ML systems.</p>
+          <p>Currently, I'm a <strong>Graduate Research Extern at Dolby Laboratories</strong>, where I engineer multimodal sequential recommendation systems that fuse audio embeddings with behavioral signals — pushing the boundaries of how AI understands music at scale.</p>
+          <p>Before that, I contributed to the <strong>BioNLP Lab at UMass</strong>, fine-tuning large language models on biomedical corpora and building RAG pipelines that cut hallucination rates by 30%. I also interned at <strong>IIT Mandi</strong>, applying statistical analysis to COVID-19 mobility data to inform public health policy.</p>
+          <p>I hold a <strong>Gold Medal (First Rank)</strong> from IcfaiTech, IFHE. I build things that work in production: deployed on AWS, containerized with Docker, monitored in Grafana.</p>
+        </div>
+        <div class="rv d1">
+          <div class="ablk"><h4>Currently</h4><p><strong>Graduate Research Extern</strong> at Dolby Laboratories · Multimodal recommendation with PyTorch</p></div>
+          <div class="ablk"><h4>Location</h4><p>Amherst, MA, USA · Originally from India</p></div>
+          <div class="ablk"><h4>Interests</h4><p>Multimodal AI · LLMs · Computer Vision · Recommendation Systems · MLOps · Real-time Inference</p></div>
+          <div class="ablk"><h4>Open To</h4><p>Summer 2026 Internships · Full-time ML/Research roles starting <strong>December 2026</strong></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ SECTION 02 — EXPERIENCE ══ -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="shead rv"><span class="snum2">02</span><h2 class="stitle">Experience</h2><div class="sline"></div></div>
+
+      <div class="eitem rv">
+        <div><div class="edate">Jan 2026 – Present</div><div class="eco">Dolby Laboratories</div><div class="eloc">Remote · Research</div></div>
+        <div>
+          <div class="erole">Graduate Research Extern</div>
+          <ul class="ebullets">
+            <li>Engineered a multimodal sequential recommendation system in PyTorch by modifying <strong>E4SRec</strong> to fuse ID sequences with 5+ music metadata categories, improving NDCG, MRR, and Hit@K by <strong>15%+</strong> over baseline.</li>
+            <li>Built an end-to-end pipeline using <strong>Hugging Face Transformers</strong> + YouTube Data API to generate 768-D audio embeddings across 10,000+ tracks representing <strong>500+ hours</strong> of audio.</li>
+            <li>Tracked all experiments via Weights &amp; Biases; presented findings to team leads in Agile sprints.</li>
+          </ul>
+          <div class="tags"><span class="tag">PyTorch</span><span class="tag">Hugging Face</span><span class="tag">E4SRec</span><span class="tag">Recommendation Systems</span><span class="tag">W&B</span><span class="tag">Audio ML</span></div>
+        </div>
+      </div>
+
+      <div class="eitem rv">
+        <div><div class="edate">Jun 2025 – Jan 2026</div><div class="eco">BioNLP Lab · UMass Amherst</div><div class="eloc">Amherst, MA</div></div>
+        <div>
+          <div class="erole">Graduate Student Researcher</div>
+          <ul class="ebullets">
+            <li>Fine-tuned <strong>PubMedBERT</strong> on 20,000+ biomedical QA pairs, achieving <strong>80%+ F1</strong> and 10–15% gain over baseline via BLEU/ROUGE.</li>
+            <li>Developed a <strong>RAG pipeline</strong> reducing hallucination by <strong>30%</strong> and improving citation precision.</li>
+          </ul>
+          <div class="tags"><span class="tag">PubMedBERT</span><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">FAISS</span><span class="tag">NLP</span><span class="tag">BioMedical AI</span></div>
+        </div>
+      </div>
+
+      <div class="eitem rv">
+        <div><div class="edate">May 2022 – Nov 2022</div><div class="eco">IIT Mandi</div><div class="eloc">India · Research Intern</div></div>
+        <div>
+          <div class="erole">Research Intern</div>
+          <ul class="ebullets">
+            <li>Built a Python + Pandas pipeline processing COVID-19 mobility data across <strong>20 Indian states</strong>, applying One-Way ANOVA and Tukey HSD to surface lockdown-phase recovery disparities.</li>
+            <li>Contributed to public health research informing <strong>state-level pandemic response policy</strong>.</li>
+          </ul>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">ANOVA</span><span class="tag">Statistical Analysis</span><span class="tag">Public Health</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ SECTION 03 — PROJECTS ══ -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="shead rv"><span class="snum2">03</span><h2 class="stitle">Projects</h2><div class="sline"></div></div>
+      <div class="pgrid">
+        <div class="pcard rv">
+          <div class="phead"><div class="pico">🔍</div><a href="https://github.com/srikarprabhas" target="_blank" class="plnk">Code ↗</a></div>
+          <div class="ptitle">Multimodal RAG Agent: Vision With Language Retrieval</div>
+          <p class="pdesc">RAG agent using <strong>LangChain + FAISS + CLIP</strong> for image/text queries — <strong>40% higher retrieval relevance</strong> over text-only baseline across 50K docs. AWS EC2 + Docker + Redis: <strong>60% latency reduction</strong>.</p>
+          <div class="tags"><span class="tag">LangChain</span><span class="tag">FAISS</span><span class="tag">CLIP</span><span class="tag">AWS EC2</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span></div>
+        </div>
+        <div class="pcard rv d1">
+          <div class="phead"><div class="pico">🚗</div><a href="https://github.com/srikarprabhas" target="_blank" class="plnk">Code ↗</a></div>
+          <div class="ptitle">Autonomous Driving: Real-Time Object Detection &amp; Segmentation</div>
+          <p class="pdesc"><strong>YOLOv9c</strong> on BDD100K — <strong>87.3% mAP@50</strong>. SAM integration at &lt;28ms P95 on A100. ONNX FP16 + Kubernetes HPA on AWS: <strong>45% cost reduction</strong>. Grafana monitoring.</p>
+          <div class="tags"><span class="tag">YOLOv9</span><span class="tag">SAM</span><span class="tag">ONNX</span><span class="tag">Kubernetes</span><span class="tag">Grafana</span></div>
+        </div>
+        <div class="pcard rv d2">
+          <div class="phead"><div class="pico">📈</div><a href="https://github.com/srikarprabhas" target="_blank" class="plnk">Code ↗</a></div>
+          <div class="ptitle">StockNet: 2-Tier Distributed Stock Trading System</div>
+          <p class="pdesc">Distributed 2-tier system with <strong>Flask + Docker</strong> on isolated AWS EC2 servers. Caching, replication (<strong>3 Order Service replicas</strong>), fault tolerance under concurrent REST API load.</p>
+          <div class="tags"><span class="tag">Flask</span><span class="tag">Docker</span><span class="tag">AWS EC2</span><span class="tag">Distributed Systems</span></div>
+        </div>
+        <div class="pcard rv d3">
+          <div class="phead"><div class="pico">🤖</div><a href="https://github.com/srikarprabhas" target="_blank" class="plnk">Code ↗</a></div>
+          <div class="ptitle">Task Scheduler &amp; Reminder WhatsApp Bot</div>
+          <p class="pdesc"><strong>Node.js + Express.js</strong> WhatsApp bot via Twilio API and node-cron. Automates weekly/bi-weekly reminders with user state tracking via JSON persistence.</p>
+          <div class="tags"><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">Twilio</span><span class="tag">node-cron</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ SECTION 04 — SKILLS ══ -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="shead rv"><span class="snum2">04</span><h2 class="stitle">Skills</h2><div class="sline"></div></div>
+      <div class="skgrid">
+        <div class="skg rv"><div class="skgt">Languages</div><div class="skpills"><span class="skp">Python</span><span class="skp">R</span><span class="skp">JavaScript</span><span class="skp">TypeScript</span><span class="skp">SQL</span></div></div>
+        <div class="skg rv d1"><div class="skgt">ML &amp; Deep Learning</div><div class="skpills"><span class="skp">PyTorch</span><span class="skp">Hugging Face</span><span class="skp">Scikit-learn</span><span class="skp">CNNs</span><span class="skp">Transformers</span><span class="skp">YOLO/DETR</span><span class="skp">Transfer Learning</span></div></div>
+        <div class="skg rv d2"><div class="skgt">NLP &amp; Retrieval</div><div class="skpills"><span class="skp">RAG</span><span class="skp">LangChain</span><span class="skp">FAISS</span><span class="skp">LLMs</span><span class="skp">CLIP</span><span class="skp">BLEU/ROUGE</span></div></div>
+        <div class="skg rv"><div class="skgt">Data &amp; Storage</div><div class="skpills"><span class="skp">Pandas</span><span class="skp">NumPy</span><span class="skp">PostgreSQL</span><span class="skp">Redis</span><span class="skp">Matplotlib</span><span class="skp">Plotly</span></div></div>
+        <div class="skg rv d1"><div class="skgt">Cloud &amp; DevOps</div><div class="skpills"><span class="skp">AWS EC2/S3/SageMaker</span><span class="skp">GCP</span><span class="skp">Azure</span><span class="skp">Docker</span><span class="skp">Kubernetes</span><span class="skp">CI/CD</span><span class="skp">Grafana</span></div></div>
+        <div class="skg rv d2"><div class="skgt">Frameworks</div><div class="skpills"><span class="skp">Flask</span><span class="skp">FastAPI</span><span class="skp">ReactJS</span><span class="skp">NodeJS</span><span class="skp">Spring Boot</span><span class="skp">Git</span><span class="skp">ONNX</span></div></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ SECTION 05 — PUBLICATIONS ══ -->
+  <section id="publications">
+    <div class="wrap">
+      <div class="shead rv"><span class="snum2">05</span><h2 class="stitle">Publications</h2><div class="sline"></div></div>
+      <div class="publist">
+        <div class="pubc rv">
+          <div>
+            <div class="pubj">Frontiers in Artificial Intelligence · 2026<span class="pubif">IF: 4.7</span></div>
+            <div class="pubt">Hybrid Deep Feature Integration Model for Robust Deepfake Detection Using Transfer-Learned Neural Networks</div>
+            <div class="pubm">Srikar Prabhas Kandagatla et al. · 2026</div>
+            <div class="tags" style="margin-top:11px"><span class="tag">Deepfake Detection</span><span class="tag">Transfer Learning</span><span class="tag">CNNs</span><span class="tag">Computer Vision</span></div>
+          </div>
+          <a href="#" target="_blank" class="pubbtn">View ↗</a>
+        </div>
+        <div class="pubc rv">
+          <div>
+            <div class="pubj">Elsevier Systems &amp; Soft Computing · 2025<span class="pubif">IF: 3.6</span></div>
+            <div class="pubt">A Deep Learning Framework for Brain Tumor Detection Using CNNs and Transfer Learning on MRI Scans</div>
+            <div class="pubm">Srikar Prabhas Kandagatla (First Author) · 2025</div>
+            <div class="tags" style="margin-top:11px"><span class="tag">Brain Tumor Detection</span><span class="tag">CNNs</span><span class="tag">MRI Analysis</span><span class="tag">Medical AI</span></div>
+          </div>
+          <a href="#" target="_blank" class="pubbtn">View ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ SECTION 06 — EDUCATION ══ -->
+  <section id="education">
+    <div class="wrap">
+      <div class="shead rv"><span class="snum2">06</span><h2 class="stitle">Education</h2><div class="sline"></div></div>
+      <div class="edgrid">
+        <div class="edc rv">
+          <div class="edbadge">Current</div>
+          <div class="eddeg">Master of Science in Computer Science</div>
+          <div class="edsch">University of Massachusetts Amherst<br/>Jan 2025 – Dec 2026</div>
+          <div class="eddet">GPA: 3.95 / 4.0</div>
+          <div class="edcrs">Machine Learning · Reinforcement Learning · Deep Learning · Data Science · Statistics</div>
+        </div>
+        <div class="edc rv d1">
+          <div class="edbadge">🥇 Gold Medal</div>
+          <div class="eddeg">B.Tech in Computer Science</div>
+          <div class="edsch">IcfaiTech, IFHE · India<br/>Aug 2020 – Aug 2024</div>
+          <div class="eddet">GPA: 9.21 / 10 · First Rank</div>
+          <div class="edcrs">Data Structures & Algorithms · Operating Systems · Big Data Systems · Network Security</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ SECTION 07 — ACHIEVEMENTS ══ -->
+  <section id="achievements">
+    <div class="wrap">
+      <div class="shead rv"><span class="snum2">07</span><h2 class="stitle">Achievements</h2><div class="sline"></div></div>
+      <div class="achgrid">
+        <div class="achc rv"><div class="achico">🥇</div><div class="acht"><h4>Shri N. J. Yasaswy Best Student Gold Medal</h4><p>First Rank at IcfaiTech, IFHE — four years of academic excellence across the entire CS batch.</p></div></div>
+        <div class="achc rv d1"><div class="achico">📄</div><div class="acht"><h4>2 Peer-Reviewed Publications</h4><p>Published in Frontiers in AI (IF: 4.7) and Elsevier Systems & Soft Computing (IF: 3.6), including a first-author paper on medical AI.</p></div></div>
+        <div class="achc rv d2"><div class="achico">🔬</div><div class="acht"><h4>Industry Research at Dolby Laboratories</h4><p>Selected as Graduate Research Extern — contributing to production-grade multimodal AI at one of audio technology's most prestigious companies.</p></div></div>
+        <div class="achc rv d3"><div class="achico">🌱</div><div class="acht"><h4>Community Leadership · Vasudhaiva Kutumbakam</h4><p>Organized tree plantation drives and empowered individuals with disabilities across Kurnool, AP. Developed the organization's website.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ SECTION 08 — CONTACT ══ -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="shead rv"><span class="snum2">08</span><h2 class="stitle">Contact</h2><div class="sline"></div></div>
+      <div class="ctgrid">
+        <div class="ctleft rv">
+          <h3>Let's build something meaningful together.</h3>
+          <p style="margin-top:14px">Actively looking for <strong>Summer 2026 internships</strong> and <strong>full-time ML/Research roles starting December 2026</strong>. Whether it's research collaboration, a product opportunity, or just a good conversation about AI — I'd love to connect.</p>
+        </div>
+        <div class="ctlinks rv d1">
+          <a href="mailto:skandagatla@umass.edu" class="ctlink">
+            <div class="clico">✉️</div><div><div class="cllbl">Email</div><div class="clval">skandagatla@umass.edu</div></div><div class="clarr">→</div>
+          </a>
+          <a href="https://linkedin.com/in/srikarprabhas" target="_blank" class="ctlink">
+            <div class="clico">💼</div><div><div class="cllbl">LinkedIn</div><div class="clval">linkedin.com/in/srikarprabhas</div></div><div class="clarr">→</div>
+          </a>
+          <a href="https://github.com/srikarprabhas" target="_blank" class="ctlink">
+            <div class="clico">🐙</div><div><div class="cllbl">GitHub</div><div class="clval">github.com/srikarprabhas</div></div><div class="clarr">→</div>
+          </a>
+          <a href="https://scholar.google.com" target="_blank" class="ctlink">
+            <div class="clico">🎓</div><div><div class="cllbl">Google Scholar</div><div class="clval">View Publications</div></div><div class="clarr">→</div>
+          </a>
+          <a href="#" class="ctlink">
+            <div class="clico">📄</div><div><div class="cllbl">Resume</div><div class="clval">Download CV (PDF)</div></div><div class="clarr">→</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <p>© 2026 · Srikar Prabhas Kandagatla</p>
+    <p>MS CS · UMass Amherst · Amherst, MA</p>
+  </footer>
+
+  <!-- JS loaded at end of body for best performance -->
+  <script src="script.js"></script>
+
+</body>
+</html>
