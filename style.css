@@ -1,0 +1,1123 @@
+/* ============================================================
+   SRIKAR PRABHAS KANDAGATLA — PORTFOLIO STYLESHEET
+   style.css
+   
+   TABLE OF CONTENTS
+   -----------------
+   01. Theme Tokens (CSS Custom Properties)
+   02. Reset & Base
+   03. Cosmic Background (Dark Theme)
+   04. Navigation
+   05. Layout Utilities
+   06. Hero Section
+   07. Section Headers (shared)
+   08. About Section
+   09. Experience Section
+   10. Projects Section
+   11. Skills Section
+   12. Publications Section
+   13. Education Section
+   14. Achievements Section
+   15. Contact Section
+   16. Footer
+   17. Scroll Reveal Animations
+   18. Responsive / Media Queries
+============================================================ */
+
+
+/* ============================================================
+   01. THEME TOKENS — CSS Custom Properties
+   Dark  = Cosmic (deep space, blue stars, nebula)
+   Light = Clean white with forest green accents
+============================================================ */
+[data-theme="dark"] {
+  --bg:          #07080f;
+  --bg2:         #0d0f1a;
+  --bg3:         #111525;
+  --border:      rgba(120, 160, 255, 0.10);
+  --border2:     rgba(120, 160, 255, 0.05);
+  --text:        #eef0f8;
+  --text2:       #8890aa;
+  --text3:       #3d4460;
+  --card:        rgba(13, 16, 32, 0.82);
+  --nav-bg:      rgba(7, 8, 15, 0.88);
+  --highlight:   #7eb8f7;
+  --tag-bg:      rgba(126, 184, 247, 0.07);
+  --tag-border:  rgba(126, 184, 247, 0.18);
+  --tag-text:    #8baed4;
+  --shadow:      0 8px 48px rgba(0, 0, 20, 0.7);
+}
+
+[data-theme="light"] {
+  --bg:          #f4f9f4;
+  --bg2:         #e8f3e8;
+  --bg3:         #dceedd;
+  --border:      rgba(30, 110, 50, 0.12);
+  --border2:     rgba(30, 110, 50, 0.06);
+  --text:        #0f1f0f;
+  --text2:       #3a5a3a;
+  --text3:       #7a9a7a;
+  --card:        #ffffff;
+  --nav-bg:      rgba(244, 249, 244, 0.93);
+  --highlight:   #1e7a34;
+  --tag-bg:      rgba(30, 122, 52, 0.07);
+  --tag-border:  rgba(30, 122, 52, 0.18);
+  --tag-text:    #236b30;
+  --shadow:      0 8px 48px rgba(0, 60, 0, 0.10);
+}
+
+
+/* ============================================================
+   02. RESET & BASE
+============================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  transition: background 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ============================================================
+   03. COSMIC BACKGROUND
+   Stars, nebula, and shooting stars — dark theme only.
+   All layers fade to invisible on light theme.
+============================================================ */
+#cosmos {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Star layer base — hidden on light theme */
+.s1, .s2, .s3 {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.5s ease;
+}
+
+[data-theme="light"] .s1,
+[data-theme="light"] .s2,
+[data-theme="light"] .s3 {
+  opacity: 0;
+}
+
+/* Layer 1 — brightest, largest stars */
+.s1 {
+  background-image:
+    radial-gradient(1.5px 1.5px at  5%  8%,  rgba(200,220,255,.75) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 14% 22%,  rgba(200,220,255,.50) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 22%  5%,  rgba(200,220,255,.80) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 30% 40%,  rgba(200,220,255,.40) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 38% 15%,  rgba(200,220,255,.70) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 46% 55%,  rgba(200,220,255,.50) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 52% 28%,  rgba(200,220,255,.40) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 60% 70%,  rgba(200,220,255,.65) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 68% 10%,  rgba(200,220,255,.60) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 75% 45%,  rgba(200,220,255,.55) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 82% 22%,  rgba(200,220,255,.70) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 88% 65%,  rgba(200,220,255,.45) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 94% 35%,  rgba(200,220,255,.60) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 98% 80%,  rgba(200,220,255,.50) 0%, transparent 100%),
+    radial-gradient(1px   1px   at  3% 55%,  rgba(200,220,255,.40) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 10% 75%,  rgba(200,220,255,.55) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 18% 88%,  rgba(200,220,255,.65) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 26% 68%,  rgba(200,220,255,.40) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 34% 82%,  rgba(200,220,255,.35) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 42% 95%,  rgba(200,220,255,.55) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 55% 85%,  rgba(200,220,255,.40) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 63% 92%,  rgba(200,220,255,.60) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 70% 78%,  rgba(200,220,255,.40) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 78% 90%,  rgba(200,220,255,.50) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 86% 82%,  rgba(200,220,255,.55) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 92% 95%,  rgba(200,220,255,.40) 0%, transparent 100%);
+  animation: drift1 90s linear infinite alternate;
+}
+
+/* Layer 2 — medium stars, mid-layer depth */
+.s2 {
+  background-image:
+    radial-gradient(1px   1px   at  8% 30%,  rgba(180,210,255,.40) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 17% 50%,  rgba(180,210,255,.30) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 25% 18%,  rgba(180,210,255,.55) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 35% 62%,  rgba(180,210,255,.30) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 44% 38%,  rgba(180,210,255,.45) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 50% 12%,  rgba(180,210,255,.55) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 58% 48%,  rgba(180,210,255,.30) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 66% 25%,  rgba(180,210,255,.45) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 73% 60%,  rgba(180,210,255,.55) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 80% 35%,  rgba(180,210,255,.35) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 87% 72%,  rgba(180,210,255,.40) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 93% 18%,  rgba(180,210,255,.50) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 12% 92%,  rgba(180,210,255,.30) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 48% 78%,  rgba(180,210,255,.45) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 77% 88%,  rgba(180,210,255,.35) 0%, transparent 100%);
+  animation: drift2 130s linear infinite alternate;
+}
+
+/* Layer 3 — tiny distant stars, very slow drift */
+.s3 {
+  background-image:
+    radial-gradient(.5px .5px at 11% 33%, rgba(220,235,255,.65) 0%, transparent 100%),
+    radial-gradient(.5px .5px at 23% 67%, rgba(220,235,255,.55) 0%, transparent 100%),
+    radial-gradient(.5px .5px at 37% 20%, rgba(220,235,255,.65) 0%, transparent 100%),
+    radial-gradient(.5px .5px at 53% 44%, rgba(220,235,255,.45) 0%, transparent 100%),
+    radial-gradient(.5px .5px at 67% 82%, rgba(220,235,255,.55) 0%, transparent 100%),
+    radial-gradient(.5px .5px at 79% 14%, rgba(220,235,255,.65) 0%, transparent 100%),
+    radial-gradient(.5px .5px at 91% 56%, rgba(220,235,255,.45) 0%, transparent 100%),
+    radial-gradient(.5px .5px at  4% 72%, rgba(220,235,255,.55) 0%, transparent 100%),
+    radial-gradient(.5px .5px at 45% 96%, rgba(220,235,255,.60) 0%, transparent 100%),
+    radial-gradient(.5px .5px at 84% 40%, rgba(220,235,255,.45) 0%, transparent 100%);
+  animation: drift3 200s linear infinite alternate;
+}
+
+/* Star drift keyframes — subtle parallax effect */
+@keyframes drift1 { from { transform: translateY(0);        } to { transform: translateY(-25px);         } }
+@keyframes drift2 { from { transform: translate(0, 0);      } to { transform: translate(12px, -18px);    } }
+@keyframes drift3 { from { transform: translateY(0);        } to { transform: translateY(-12px);         } }
+
+/* Shooting stars */
+.sh {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,220,255,.85), transparent);
+  opacity: 0;
+  animation: shoot 9s ease-in-out infinite;
+}
+
+.sh:nth-child(4) { top: 12%; width: 180px; animation-delay: 0s;   }
+.sh:nth-child(5) { top: 38%; width: 140px; animation-delay: 3.5s; }
+.sh:nth-child(6) { top: 62%; width: 200px; animation-delay: 7s;   }
+
+[data-theme="light"] .sh { display: none; }
+
+@keyframes shoot {
+  0%   { transform: translateX(-5vw)   rotate(-12deg); opacity: 0; }
+  4%   {                                               opacity: 1; }
+  22%  { transform: translateX(115vw)  rotate(-12deg); opacity: 0; }
+  100% { transform: translateX(115vw)  rotate(-12deg); opacity: 0; }
+}
+
+/* Nebula cloud layer */
+.nebula {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.5s ease;
+  background:
+    radial-gradient(ellipse 65% 45% at 10% 20%, rgba( 70, 90,220,.11) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 60% at 88% 75%, rgba(100, 55,185,.09) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 30% at 50% 96%, rgba( 40, 75,190,.08) 0%, transparent 65%),
+    radial-gradient(ellipse 35% 50% at 72% 18%, rgba( 55, 35,165,.07) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 40% at 25% 58%, rgba( 35, 60,185,.06) 0%, transparent 65%);
+  animation: npulse 14s ease-in-out infinite alternate;
+}
+
+[data-theme="light"] .nebula { opacity: 0; }
+
+@keyframes npulse {
+  from { opacity: 0.8; transform: scale(1);    }
+  to   { opacity: 1.0; transform: scale(1.02); }
+}
+
+/* Light theme — subtle green gradient texture */
+.ltex {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background:
+    radial-gradient(ellipse 50% 40% at 15% 25%, rgba(30,122,52,.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 55% at 85% 70%, rgba(30,122,52,.05) 0%, transparent 70%),
+    radial-gradient(ellipse 55% 30% at 50% 95%, rgba(30,122,52,.04) 0%, transparent 70%);
+}
+
+[data-theme="light"] .ltex { opacity: 1; }
+
+
+/* ============================================================
+   04. NAVIGATION
+============================================================ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.4s, border-color 0.4s;
+}
+
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.5px;
+  color: var(--text);
+}
+
+.nav-logo span { color: var(--highlight); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 12.5px;
+  color: var(--text2);
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+  position: relative;
+}
+
+/* Underline indicator on hover */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  height: 1px;
+  background: var(--highlight);
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+  transform-origin: left;
+}
+
+.nav-links a:hover              { color: var(--text); }
+.nav-links a:hover::after       { transform: scaleX(1); }
+
+/* Dark/light toggle pill */
+.tog {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  width: 52px;
+  height: 28px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+
+.togthumb {
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: transform 0.3s ease, background 0.3s;
+}
+
+[data-theme="light"] .togthumb { transform: translateX(24px); }
+
+
+/* ============================================================
+   05. LAYOUT UTILITIES
+============================================================ */
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--border2);
+}
+
+section:last-of-type { border-bottom: none; }
+
+
+/* ============================================================
+   06. HERO SECTION
+============================================================ */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 60px;
+  border-bottom: 1px solid var(--border2);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  width: 100%;
+}
+
+/* Eyebrow label with leading line */
+.eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--highlight);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px; height: 1px;
+  background: var(--highlight);
+}
+
+h1.hname {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -2px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+h1.hname .hl { color: var(--highlight); }
+
+.htitle {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(13px, 1.8vw, 17px);
+  font-weight: 500;
+  color: var(--text2);
+  margin-bottom: 24px;
+}
+
+.hdesc {
+  font-size: 15px;
+  color: var(--text2);
+  line-height: 1.9;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.hdesc strong { color: var(--text); font-weight: 500; }
+
+/* CTA Buttons */
+.hctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.btnp {
+  background: var(--highlight);
+  color: var(--bg);
+  padding: 12px 26px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--highlight);
+  cursor: pointer;
+  transition: all 0.22s;
+  display: inline-block;
+}
+
+.btnp:hover { background: transparent; color: var(--highlight); }
+
+.btns {
+  background: transparent;
+  color: var(--text2);
+  padding: 12px 26px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.22s;
+  display: inline-block;
+}
+
+.btns:hover { border-color: var(--text2); color: var(--text); }
+
+/* Social icon links */
+.hsocials {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.hlink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  color: var(--text3);
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.hlink svg   { width: 13px; height: 13px; }
+.hlink:hover { color: var(--highlight); }
+
+/* Hero right — stat grid */
+.hstats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.sc {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 22px 18px;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.sc:hover {
+  border-color: var(--highlight);
+  transform: translateY(-3px);
+  box-shadow: 0 0 24px rgba(126,184,247,.07);
+}
+
+[data-theme="light"] .sc:hover { box-shadow: 0 0 24px rgba(30,122,52,.07); }
+
+.snum {
+  font-family: 'Syne', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.snum span { color: var(--highlight); font-size: 18px; }
+
+.slbl {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Wide card spanning both columns */
+.sc.wide {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.grow { display: flex; gap: 18px; align-items: center; }
+
+.gi .gn {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 700;
+  color: var(--text); letter-spacing: -0.5px;
+}
+
+.gi .gl {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: var(--text3);
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.gd { width: 1px; height: 30px; background: var(--border); }
+
+
+/* ============================================================
+   07. SECTION HEADERS (shared pattern)
+============================================================ */
+.shead {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  margin-bottom: 52px;
+}
+
+.snum2 {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--highlight);
+  letter-spacing: 1px;
+}
+
+h2.stitle {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(26px, 3.8vw, 38px);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  color: var(--text);
+  line-height: 1;
+}
+
+.sline {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+
+/* ============================================================
+   08. ABOUT SECTION
+============================================================ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.atext p {
+  font-size: 15px;
+  color: var(--text2);
+  line-height: 1.9;
+  margin-bottom: 14px;
+}
+
+.atext p strong        { color: var(--text); font-weight: 500; }
+.atext p:last-child    { margin-bottom: 0; }
+
+/* Aside info blocks */
+.ablk {
+  border-left: 2px solid var(--highlight);
+  padding-left: 18px;
+  margin-bottom: 26px;
+}
+
+.ablk h4 {
+  font-family: 'DM Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--highlight);
+  margin-bottom: 8px;
+}
+
+.ablk p                { font-size: 13.5px; color: var(--text2); line-height: 1.75; }
+.ablk p strong         { color: var(--text); font-weight: 500; }
+
+
+/* ============================================================
+   09. EXPERIENCE SECTION
+============================================================ */
+.eitem {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 0 40px;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--border2);
+}
+
+.eitem:last-child { border-bottom: none; }
+
+.edate {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  color: var(--highlight);
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.eco {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px; font-weight: 600;
+  color: var(--text); margin-bottom: 3px;
+}
+
+.eloc {
+  font-size: 11.5px;
+  color: var(--text3);
+  font-family: 'DM Mono', monospace;
+}
+
+.erole {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--text); letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+.ebullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.ebullets li {
+  font-size: 13.5px;
+  color: var(--text2);
+  line-height: 1.77;
+  padding-left: 18px;
+  position: relative;
+}
+
+.ebullets li::before {
+  content: '→';
+  position: absolute; left: 0;
+  color: var(--highlight);
+  font-size: 11px; top: 2px;
+}
+
+.ebullets li strong { color: var(--text); font-weight: 500; }
+
+/* Shared tag chips (used in Experience, Projects, Publications) */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 13px;
+}
+
+.tag {
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  color: var(--tag-text);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.3px;
+  padding: 3px 10px;
+  transition: all 0.2s;
+}
+
+.tag:hover { border-color: var(--highlight); color: var(--highlight); }
+
+
+/* ============================================================
+   10. PROJECTS SECTION
+============================================================ */
+.pgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.pcard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 26px 24px;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.2s, transform 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Highlight bar that sweeps in on hover */
+.pcard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--highlight);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.pcard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 32px rgba(126,184,247,.06);
+}
+
+[data-theme="light"] .pcard:hover { box-shadow: 0 0 32px rgba(30,122,52,.06); }
+
+.pcard:hover::before { transform: scaleX(1); }
+
+.phead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.pico  { font-size: 22px; }
+
+.plnk {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--highlight);
+  border: 1px solid var(--highlight);
+  padding: 4px 10px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.plnk:hover { background: var(--highlight); color: var(--bg); }
+
+.ptitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+.pdesc {
+  font-size: 13.5px;
+  color: var(--text2);
+  line-height: 1.82;
+  margin-bottom: 13px;
+}
+
+.pdesc strong { color: var(--text); font-weight: 500; }
+
+
+/* ============================================================
+   11. SKILLS SECTION
+============================================================ */
+.skgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.skg {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 22px 20px;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s;
+}
+
+.skg:hover { border-color: var(--highlight); }
+
+.skgt {
+  font-family: 'DM Mono', monospace;
+  font-size: 9.5px; letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--highlight);
+  margin-bottom: 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+
+/* Trailing line after category title */
+.skgt::after {
+  content: '';
+  flex: 1; height: 1px;
+  background: var(--border);
+}
+
+.skpills { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.skp {
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  color: var(--tag-text);
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px;
+  padding: 4px 10px;
+  letter-spacing: 0.2px;
+  transition: all 0.2s;
+}
+
+.skp:hover { background: var(--highlight); border-color: var(--highlight); color: var(--bg); }
+
+
+/* ============================================================
+   12. PUBLICATIONS SECTION
+============================================================ */
+.publist {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.pubc {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 24px 22px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: start;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s;
+}
+
+.pubc:hover { border-color: var(--highlight); }
+
+.pubj {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--highlight);
+  margin-bottom: 7px;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+
+/* Impact factor badge */
+.pubif {
+  background: rgba(126,184,247,.10);
+  border: 1px solid rgba(126,184,247,.25);
+  color: var(--highlight);
+  padding: 2px 8px; font-size: 9px; letter-spacing: 1px;
+}
+
+[data-theme="light"] .pubif {
+  background: rgba(30,122,52,.10);
+  border-color: rgba(30,122,52,.25);
+}
+
+.pubt {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 600;
+  color: var(--text); letter-spacing: -0.3px;
+  line-height: 1.4; margin-bottom: 7px;
+}
+
+.pubm {
+  font-size: 12.5px;
+  color: var(--text3);
+  font-family: 'DM Mono', monospace;
+}
+
+.pubbtn {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--highlight);
+  border: 1px solid var(--highlight);
+  padding: 8px 14px;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  display: block;
+}
+
+.pubbtn:hover { background: var(--highlight); color: var(--bg); }
+
+
+/* ============================================================
+   13. EDUCATION SECTION
+============================================================ */
+.edgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.edc {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 26px 22px;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s, transform 0.2s;
+  position: relative; overflow: hidden;
+}
+
+.edc:hover { border-color: var(--highlight); transform: translateY(-2px); }
+
+.edbadge {
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--highlight);
+  color: var(--bg);
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+}
+
+.eddeg {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px; font-weight: 700;
+  color: var(--text); letter-spacing: -0.5px;
+  margin-bottom: 4px;
+  padding-right: 70px;
+  line-height: 1.25;
+}
+
+.edsch {
+  font-size: 13.5px;
+  color: var(--text2);
+  margin-bottom: 12px; line-height: 1.5;
+}
+
+.eddet {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: var(--highlight);
+  margin-bottom: 4px;
+  display: flex; align-items: center; gap: 8px;
+}
+
+.eddet::before { content: ''; width: 14px; height: 1px; background: var(--highlight); }
+
+.edcrs { font-size: 12px; color: var(--text3); line-height: 1.7; margin-top: 8px; }
+
+
+/* ============================================================
+   14. ACHIEVEMENTS SECTION
+============================================================ */
+.achgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.achc {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 22px 20px;
+  display: flex; gap: 14px; align-items: flex-start;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s;
+}
+
+.achc:hover { border-color: var(--highlight); }
+
+.achico { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+
+.acht h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px; font-weight: 600;
+  color: var(--text); margin-bottom: 5px; line-height: 1.3;
+}
+
+.acht p { font-size: 13px; color: var(--text2); line-height: 1.7; }
+
+
+/* ============================================================
+   15. CONTACT SECTION
+============================================================ */
+.ctgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: start;
+}
+
+.ctleft h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700; color: var(--text);
+  letter-spacing: -1px; margin-bottom: 14px; line-height: 1.15;
+}
+
+.ctleft p           { font-size: 14.5px; color: var(--text2); line-height: 1.88; }
+.ctleft p strong    { color: var(--text); font-weight: 500; }
+
+.ctlinks { display: flex; flex-direction: column; gap: 11px; }
+
+.ctlink {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 15px 18px;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.ctlink:hover { border-color: var(--highlight); transform: translateX(4px); }
+
+.clico {
+  width: 34px; height: 34px;
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; flex-shrink: 0;
+}
+
+.cllbl {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text3); margin-bottom: 2px;
+}
+
+.clval  { font-size: 13px; color: var(--text); }
+.clarr  { margin-left: auto; color: var(--highlight); font-size: 14px; }
+
+
+/* ============================================================
+   16. FOOTER
+============================================================ */
+footer {
+  border-top: 1px solid var(--border2);
+  padding: 28px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  position: relative; z-index: 1;
+}
+
+footer p {
+  font-family: 'DM Mono', monospace;
+  font-size: 10.5px; color: var(--text3); letter-spacing: 0.4px;
+}
+
+
+/* ============================================================
+   17. SCROLL REVEAL ANIMATIONS
+   Elements start hidden (opacity 0, shifted down),
+   then .vis class is added by the IntersectionObserver in script.js
+============================================================ */
+.rv {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.rv.vis { opacity: 1; transform: translateY(0); }
+
+/* Stagger delays for sibling elements */
+.d1 { transition-delay: 0.08s; }
+.d2 { transition-delay: 0.16s; }
+.d3 { transition-delay: 0.24s; }
+.d4 { transition-delay: 0.32s; }
+
+
+/* ============================================================
+   18. RESPONSIVE — MEDIA QUERIES
+============================================================ */
+
+/* Tablet — collapse two-column layouts */
+@media (max-width: 920px) {
+  .hero-grid  { grid-template-columns: 1fr; gap: 44px; }
+  .hstats     { display: none; }           /* hide stat cards on mobile */
+  .about-grid { grid-template-columns: 1fr; gap: 34px; }
+  .pgrid      { grid-template-columns: 1fr; }
+  .skgrid     { grid-template-columns: 1fr 1fr; }
+  .ctgrid     { grid-template-columns: 1fr; gap: 34px; }
+  .eitem      { grid-template-columns: 1fr; gap: 10px; }
+  .edgrid     { grid-template-columns: 1fr; }
+  .achgrid    { grid-template-columns: 1fr; }
+  .pubc       { grid-template-columns: 1fr; }
+}
+
+/* Mobile — tighter padding, hide nav links */
+@media (max-width: 600px) {
+  .wrap             { padding: 0 20px; }
+  nav               { padding: 0 20px; }
+  .nav-links        { display: none; }     /* mobile nav hidden (add hamburger if needed) */
+  .skgrid           { grid-template-columns: 1fr; }
+  footer            { flex-direction: column; gap: 8px; text-align: center; }
+}
